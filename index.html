@@ -4,19 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatroom</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js"></script>
 </head>
 <body>
-    <h1>Chatroom</h1>
-    <div id="join-room">
-        <input type="text" id="room-code" placeholder="Enter Room Code">
-        <button id="join-btn">Join Room</button>
+    <div id="auth-container">
+        <button id="host-btn">Host a Room</button>
+        <button id="join-btn">Join a Room</button>
     </div>
-    <div id="chat" style="display: none;">
+
+    <div id="room-container" style="display: none;">
+        <h2 id="room-code"></h2>
         <div id="messages"></div>
-        <input type="text" id="message-input" placeholder="Type your message">
+        <input type="text" id="message-input" placeholder="Type a message">
         <button id="send-btn">Send</button>
+        <button id="leave-btn">Leave Room</button>
     </div>
-    <script src="script.js"></script>
+
+    <script src="app.js"></script>
 </body>
 </html>
