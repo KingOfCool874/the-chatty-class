@@ -5,35 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Chatty Class</title>
     <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
-        input, button { margin: 5px; padding: 10px; font-size: 16px; }
         .hidden { display: none; }
     </style>
 </head>
 <body>
-    <h1>The Chatty Class</h1>
     <div id="main">
+        <h1>The Chatty Class</h1>
         <button onclick="showHostRoom()">Host a Room</button>
         <button onclick="showJoinRoom()">Join a Room</button>
     </div>
     <div id="host" class="hidden">
         <h2>Host a Room</h2>
-        <button onclick="hostRoom()">Start Hosting</button>
+        <button onclick="hostRoom()">Generate Room Code</button>
         <div id="room-code" class="hidden">
-            <p>Share this code:</p>
-            <h3 id="generated-code"></h3>
-            <button onclick="showChat()">Go to Chat</button>
+            <p>Room Code: <span id="generated-code"></span></p>
+            <button onclick="showChat()">Start Chat</button>
         </div>
     </div>
     <div id="join" class="hidden">
         <h2>Join a Room</h2>
-        <input type="text" id="join-code" placeholder="Enter Room Code">
-        <button onclick="joinRoom()">Join Room</button>
+        <input type="text" id="join-code" placeholder="Enter Room Code" />
+        <button onclick="joinRoom()">Join</button>
     </div>
     <div id="chat" class="hidden">
         <h2>Chat Room</h2>
         <div id="messages" style="border: 1px solid #ccc; height: 200px; overflow-y: scroll; padding: 10px;"></div>
-        <input type="text" id="message" placeholder="Type a message">
+        <input type="text" id="message" placeholder="Type your message" />
         <button onclick="sendMessage()">Send</button>
     </div>
     <script src="script.js"></script>
