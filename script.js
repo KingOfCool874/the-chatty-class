@@ -44,3 +44,8 @@ exports.handler = async (event) => {
         };
     }
 };
+
+function updateUsersList(users) {
+    const usersList = document.getElementById("users");
+    usersList.innerHTML = users.map(user => `<li>${user}</li>`).join("");
+}
