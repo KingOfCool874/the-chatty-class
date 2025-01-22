@@ -39,7 +39,7 @@ function showChat() {
 async function sendMessage() {
     const message = document.getElementById("message").value.trim();
     if (message) {
-        await fetch("https://your-netlify-function-url.netlify.app/.netlify/functions/send-message", {
+        await fetch("https://venerable-bubblegum-f75deb.netlify.app//.netlify/functions/send-message", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ room: roomCode, message, user: userType }),
@@ -50,7 +50,7 @@ async function sendMessage() {
 
 async function fetchMessages() {
     setInterval(async () => {
-        const res = await fetch(`https://your-netlify-function-url.netlify.app/.netlify/functions/get-messages?room=${roomCode}`);
+        const res = await fetch(`https://venerable-bubblegum-f75deb.netlify.app//.netlify/functions/get-messages?room=${roomCode}`);
         const data = await res.json();
         const messagesDiv = document.getElementById("messages");
         messagesDiv.innerHTML = data.messages.map(msg => `<p>${msg.user}: ${msg.message}</p>`).join("");
