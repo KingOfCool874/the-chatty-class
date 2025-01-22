@@ -3,36 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Chatty Class</title>
-    <style>
-        .hidden { display: none; }
-    </style>
+    <title>Game Hub</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="main">
-        <h1>The Chatty Class</h1>
-        <button onclick="showHostRoom()">Host a Room</button>
-        <button onclick="showJoinRoom()">Join a Room</button>
-    </div>
-    <div id="host" class="hidden">
-        <h2>Host a Room</h2>
-        <button onclick="hostRoom()">Generate Room Code</button>
-        <div id="room-code" class="hidden">
-            <p>Room Code: <span id="generated-code"></span></p>
-            <button onclick="showChat()">Start Chat</button>
+    <header>
+        <h1>Welcome to Game Hub</h1>
+        <nav>
+            <ul>
+                <li><a href="#action">Action</a></li>
+                <li><a href="#adventure">Adventure</a></li>
+                <li><a href="#puzzle">Puzzle</a></li>
+                <li><a href="#sports">Sports</a></li>
+                <li><a href="#racing">Racing</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="games">
+        <div id="action">
+            <h2>Action Games</h2>
+            <!-- Game links will go here -->
         </div>
-    </div>
-    <div id="join" class="hidden">
-        <h2>Join a Room</h2>
-        <input type="text" id="join-code" placeholder="Enter Room Code" />
-        <button onclick="joinRoom()">Join</button>
-    </div>
-    <div id="chat" class="hidden">
-        <h2>Chat Room</h2>
-        <div id="messages" style="border: 1px solid #ccc; height: 200px; overflow-y: scroll; padding: 10px;"></div>
-        <input type="text" id="message" placeholder="Type your message" />
-        <button onclick="sendMessage()">Send</button>
-    </div>
-    <script src="script.js"></script>
+        <div id="adventure">
+            <h2>Adventure Games</h2>
+            <!-- Game links will go here -->
+        </div>
+        <div id="puzzle">
+            <h2>Puzzle Games</h2>
+            <!-- Game links will go here -->
+        </div>
+        <div id="sports">
+            <h2>Sports Games</h2>
+            <!-- Game links will go here -->
+        </div>
+        <div id="racing">
+            <h2>Racing Games</h2>
+            <!-- Game links will go here -->
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2025 Game Hub</p>
+    </footer>
 </body>
 </html>
