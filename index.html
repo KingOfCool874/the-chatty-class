@@ -3,26 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chatroom</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://www.gstatic.com/firebasejs/9.8.3/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.3/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.8.3/firebase-auth.js"></script>
+    <title>The Chatty Class</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; }
+        input, button { margin: 5px; padding: 10px; font-size: 16px; }
+        .hidden { display: none; }
+    </style>
 </head>
 <body>
-    <div id="auth-container">
-        <button id="host-btn">Host a Room</button>
-        <button id="join-btn">Join a Room</button>
+    <h1>The Chatty Class</h1>
+    <div id="main">
+        <button onclick="showHostRoom()">Host a Room</button>
+        <button onclick="showJoinRoom()">Join a Room</button>
     </div>
-
-    <div id="room-container" style="display: none;">
-        <h2 id="room-code"></h2>
-        <div id="messages"></div>
-        <input type="text" id="message-input" placeholder="Type a message">
-        <button id="send-btn">Send</button>
-        <button id="leave-btn">Leave Room</button>
+    <div id="host" class="hidden">
+        <h2>Host a Room</h2>
+        <button onclick="hostRoom()">Start Hosting</button>
+        <div id="room-code" class="hidden">
+            <p>Share this code:</p>
+            <h3 id="generated-code"></h3>
+            <button onclick="showChat()">Go to Chat</button>
+        </div>
     </div>
-
-    <script src="app.js"></script>
+    <div id="join" class="hidden">
+        <h2>Join a Room</h2>
+        <input type="text" id="join-code" placeholder="Enter Room Code">
+        <button onclick="joinRoom()">Join Room</button>
+    </div>
+    <div id="chat" class="hidden">
+        <h2>Chat Room</h2>
+        <div id="messages" style="border: 1px solid #ccc; height: 200px; overflow-y: scroll; padding: 10px;"></div>
+        <input type="text" id="message" placeholder="Type a message">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
